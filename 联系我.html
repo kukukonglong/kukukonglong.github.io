@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>联系我 - 陈建材的个人网站</title>
+    <link rel="stylesheet icon" href="个人简介.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* 导航栏样式 */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 15px 0;
+        border-bottom: 1px solid #f8d0e0;
+        text-align: center;
+      }
+      .nav .logo {
+        color: #f687b3;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 50px;
+        display: inline-block;
+        text-align: left;
+        margin-left: 50px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #666;
+        margin: 0 15px;
+        font-size: 16px;
+        margin-right: 50px;
+      }
+      .nav a.active {
+        color: #f687b3;
+        font-weight: bold;
+      }
+
+      /* 主内容样式 */
+      .main {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .card {
+        background-color: #fff0f5;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(255, 192, 203, 0.2);
+      }
+      .card h3 {
+        color: #ff69b4;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-bottom: 2px solid #ffc0cb;
+        padding-bottom: 10px;
+      }
+      /* 联系方式样式 */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border-left: 3px solid #ff69b4;
+      }
+      .info-item img {
+        width: 20px;
+        height: 20px;
+      }
+      .info-item span {
+        color: #666;
+        font-size: 14px;
+      }
+      /* 表单样式 */
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 14px;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ffc0cb;
+        border-radius: 5px;
+        outline: none;
+        font-size: 14px;
+        font-family: inherit;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: #ff69b4;
+      }
+      .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      .send-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #ff69b4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .send-btn:hover {
+        background-color: #ff1493;
+      }
+      /* 常见问题样式 */
+      .faq {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        background-color: #fff0f5;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 8px rgba(255, 192, 203, 0.2);
+      }
+      .faq h3 {
+        color: #ff69b4;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 2px solid #ffc0cb;
+        padding-bottom: 10px;
+      }
+      .faq-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .faq-item {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 3px solid #ff69b4;
+      }
+      .faq-item q {
+        display: block;
+        color: #ff69b4;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      .faq-item p {
+        color: #666;
+        font-size: 13px;
+      }
+      /* 页脚样式 */
+      .footer {
+        background-color: #f687b3;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        font-size: 14px;
+      }
+      /* 响应式适配 */
+      @media (max-width: 768px) {
+        .main {
+          grid-template-columns: 1fr;
+        }
+        .faq-list {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <div class="nav">
+      <div class="logo">
+        <span class="logo">陈建材</span>
+      </div>
+      <div class="content">
+        <a href="index.html">首页</a>
+        <a href="我的爱好.html">我的爱好</a>
+        <a href="联系我.html" class="active">联系我</a>
+      </div>
+    </div>
+
+    <!-- 主内容 -->
+    <main class="main">
+      <!-- 联系方式 -->
+      <div class="card">
+        <h3>联系方式</h3>
+        <div class="contact-info">
+          <div class="info-item">
+            <img src="img/邮件.png" alt="邮箱">
+            <span>xiaoai@example.com</span>
+          </div>
+          <div class="info-item">
+            <img src="img/微信.png" alt="微信">
+            <span>xiaoai_2025</span>
+          </div>
+          <div class="info-item">
+            <img src="img/QQ.png" alt="QQ">
+            <span>123456789</span>
+          </div>
+          <div class="info-item">
+            <img src="img/坐标.png"
+            alt="地址">
+            <span>XX市XX区</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 发送消息表单 -->
+      <div class="card">
+        <h3>发送消息</h3>
+        <form onsubmit="handleSend(event)">
+          <div class="form-group">
+            <label for="name">姓名</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="请输入您的姓名"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">邮箱</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="请输入您的邮箱"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject">主题</label>
+            <select id="subject" required>
+              <option value="">请选择主题</option>
+              <option value="交流学习">交流学习</option>
+              <option value="照片分享">照片分享</option>
+              <option value="学习方法">学习方法</option>
+              <option value="书籍推荐">书籍推荐</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">消息内容</label>
+            <textarea
+              id="message"
+              placeholder="请输入您想说的话..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="send-btn">发送消息</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- 常见问题 -->
+    <section class="faq">
+      <h3>常见问题</h3>
+      <div class="faq-list">
+        <div class="faq-item">
+          <q>可以一起学习交流吗？</q>
+          <p>当然可以！我很乐意和志同道合的朋友一起学习进步，互相鼓励。</p>
+        </div>
+        <div class="faq-item">
+          <q>你的照片可以分享吗？</q>
+          <p>个人使用没问题，如果是其他用途请先联系我获得同意哦。</p>
+        </div>
+        <div class="faq-item">
+          <q>有什么好的学习方法推荐？</q>
+          <p>我觉得最重要的是保持好奇心和耐心，多实践多总结，欢迎一起讨论。</p>
+        </div>
+        <div class="faq-item">
+          <q>可以推荐一些好书吗？</q>
+          <p>当然！我很乐意分享我喜欢的书籍，我们可以一起读书交流心得。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">©2025 陈建材的个人网站,感谢您的访问</footer>
+
+    <script>
+      function handleSend(event) {
+        event.preventDefault(); // 阻止表单默认提交
+        alert("消息发送成功！我会尽快回复您~");
+        document.querySelector("form").reset(); // 重置表单
+      }
+    </script>
+  </body>
+</html>

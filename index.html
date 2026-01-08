@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页</title>
+    <link rel="stylesheet icon" href="个人简介.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* 导航栏样式 */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 15px 0;
+        border-bottom: 1px solid #f8d0e0;
+        text-align: center;
+      }
+      .nav .logo {
+        color: #f687b3;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 50px;
+        display: inline-block;
+        text-align: left;
+        margin-left: 50px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #666;
+        margin: 0 15px;
+        font-size: 16px;
+        margin-right: 50px;
+      }
+      .nav a.active {
+        color: #f687b3;
+        font-weight: bold;
+      }
+
+      /* 头部介绍样式 */
+      .header {
+        background-color: #ffe6f0;
+        padding: 40px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header .intro h1 {
+        color: #f687b3;
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+      .header .intro h3 {
+        color: #999;
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+      .header .intro p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        max-width: 600px;
+      }
+      .header .stats {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 15px;
+      }
+      .header .stats .stat-item {
+        text-align: center;
+      }
+      .header .stats .stat-num {
+        color: #f687b3;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .header .stats .stat-text {
+        color: #999;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .header .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #fff;
+      }
+      .header .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* 标语样式 */
+      .slogan {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        letter-spacing: 2px;
+      }
+      /* 个人介绍和标签样式 */
+      .about {
+        display: flex;
+        padding: 0 80px;
+        margin-bottom: 40px;
+        gap: 50px;
+      }
+      .about .text {
+        flex: 2;
+        line-height: 1.8;
+        color: #666;
+        font-size: 16px;
+      }
+      .about .text p {
+        margin-bottom: 15px;
+      }
+      .about .tags {
+        flex: 1;
+      }
+      .about .tags h4 {
+        color: #f687b3;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .about .tags .tag-item {
+        display: inline-block;
+        background-color: #ffe6f0;
+        color: #f687b3;
+        padding: 8px 15px;
+        border-radius: 20px;
+        margin: 0 10px 10px 0;
+        font-size: 14px;
+      }
+      /* 最新动态样式 */
+      .dynamic {
+        padding: 0 80px 40px;
+      }
+      .dynamic h2 {
+        color: #f687b3;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .dynamic .card-list {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+      .dynamic .card {
+        flex: 1;
+        background-color: #fff;
+        border: 1px solid #f8d0e0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .dynamic .card .date {
+        color: #f687b3;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .dynamic .card .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+      }
+      .dynamic .card .desc {
+        color: #666;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+      /* 页脚样式 */
+      footer {
+        background-color: #f687b3;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <div class="nav">
+      <div class="logo">
+        <span class="logo">陈建材</span>
+      </div>
+      <div class="content">
+        <a href="首页.html" class="active">首页</a>
+        <a href="我的爱好.html">我的爱好</a>
+        <a href="联系我.html">联系我</a>
+      </div>
+    </div>
+
+    <!-- 头部介绍 -->
+    <div class="header">
+      <div class="intro">
+        <h1>你好，我是陈建材</h1>
+        <h3>重庆安放职业学院人工智能技术应用专业的大一学生</h3>
+        <p>
+          热爱生活，喜欢尝试新鲜事物。在学习的同时，也在探索自己的兴趣爱好，记录生活中的美好瞬间。
+        </p>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-num">19</div>
+            <div class="stat-text">年龄</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">1</div>
+            <div class="stat-text">大学年级</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5+</div>
+            <div class="stat-text">兴趣爱好</div>
+          </div>
+        </div>
+      </div>
+      <div class="avatar">
+        <img src="证件照.jpg" alt="头像" />
+      </div>
+    </div>
+
+    <!-- 标语 -->
+    <div class="slogan">欢迎来到我的网页！</div>
+
+    <!-- 个人介绍和标签 -->
+    <div class="about">
+      <div class="text">
+        <p>
+          我是一名大一学生，对生活充满生机。喜欢在忙碌的学习之余，喜欢打篮球，热爱生活。
+        </p>
+        <p>
+          我相信每个人都有自己独特的闪光点，，我们都能成为更好的自己。，我是一个积极向上的人。
+        </p>
+        <p>
+          这个网站记录了我的学习生活和兴趣爱好，希望能和大家分享我的成长历程。
+        </p>
+      </div>
+      <div class="tags">
+        <h4>个人标签</h4>
+        <div class="tag-item">爱学习</div>
+        <div class="tag-item">爱生活</div>
+        <div class="tag-item">有创意</div>
+        <div class="tag-item">爱分享</div>
+        <div class="tag-item">积极向上</div>
+        <div class="tag-item">热爱运动</div>
+      </div>
+    </div>
+
+    <!-- 最新动态 -->
+    <div class="dynamic">
+      <h2>最新动态</h2>
+      <div class="card-list">
+        <div class="card">
+          <div class="date">2025.01.20</div>
+          <div class="title">完成期末作业</div>
+          <div class="desc">
+            经过一周的努力，终于完成了这个个人网站的制作。学到了很多知识，很有成就感！
+          </div>
+        </div>
+        <div class="card">
+          <div class="date">2025.01.15</div>
+          <div class="title">参加社团活动</div>
+          <div class="desc">
+            参加了学校的XX社团活动，认识了很多志同道合的朋友，收获满满。
+          </div>
+        </div>
+        <div class="card">
+          <div class="date">2025.01.10</div>
+          <div class="title">学习新技能</div>
+          <div class="desc">
+            最近在学习一项新技能，虽然有些挑战，但过程很有趣，期待有所收获。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>© 2025 陈建材的个人网站 感谢您的访问</footer>
+  </body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的爱好</title>
+    <link rel="stylesheet icon" href="个人简介.png" />
+    <style>
+      /* 全局样式重置 */
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* 导航栏样式 */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 15px 0;
+        border-bottom: 1px solid #f8d0e0;
+        text-align: center;
+      }
+      .nav .logo {
+        color: #f687b3;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 50px;
+        display: inline-block;
+        text-align: left;
+        margin-left: 50px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #666;
+        margin: 0 15px;
+        font-size: 16px;
+        margin-right: 50px;
+      }
+      .nav a.active {
+        color: #f687b3;
+        font-weight: bold;
+      }
+
+
+      /* 头部导航 */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background-color: #fff;
+        border-bottom: 2px solid #f8c2d8;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #e86f96;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #666;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      nav a.active,
+      nav a:hover {
+        color: #e86f96;
+        font-weight: 500;
+      }
+
+      /* 爱好banner */
+      .hobbies-banner {
+        text-align: center;
+        padding: 2rem 0;
+        color: #e86f96;
+      }
+
+      .hobbies-banner h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hobbies-banner p {
+        font-size: 1rem;
+        color: #999;
+      }
+
+      /* 爱好卡片容器 */
+      .hobbies-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 5% 3rem;
+      }
+
+      /* 爱好卡片样式 */
+      .hobby-card {
+        background-color: #fff;
+        border: 1px solid #f8c2d8;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(232, 111, 150, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .hobby-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-icon {
+        font-size: 1.8rem;
+        color: #e86f96;
+        margin-bottom: 1rem;
+      }
+
+      .hobby-card h3 {
+        color: #e86f96;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .card-desc {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .card-tag {
+        font-weight: 500;
+        color: #e86f96;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-list {
+        list-style: none;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .card-list li {
+        margin-bottom: 0.3rem;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .card-list li::before {
+        content: "·";
+        position: absolute;
+        left: 0;
+        color: #e86f96;
+        font-weight: bold;
+      }
+
+      /* 页脚 */
+      footer {
+        background-color: #e86f96;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      /* 响应式适配 */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
+        }
+
+        nav ul {
+          gap: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hobbies-banner h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+</head>
+<body>
+   <!-- 导航栏 -->
+    <div class="nav">
+      <div class="logo">
+        <span class="logo">陈建材</span>
+      </div>
+      <div class="content">
+        <a href="index.html">首页</a>
+        <a href="我的爱好.html" class="active">我的爱好</a>
+        <a href="联系我.html" >联系我</a>
+      </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+      <section class="hobbies-banner">
+        <h1>我的爱好</h1>
+        <p>生活因兴趣而精彩</p >
+      </section>
+
+      <section class="hobbies-container">
+        <!-- 阅读写作 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-book-open"></i></div>
+          <h3>阅读写作</h3>
+          <p class="card-desc">
+            喜欢在安静的午后，捧一本好书，享受文字带来的美好。偶尔也会写写心情随笔。
+          </p >
+          <div class="card-tag">喜欢的类型：</div>
+          <ul class="card-list">
+            <li>文学小说·感受不同的人生</li>
+            <li>心理学书籍·了解内心世界</li>
+            <li>旅行游记·看遍世界风景</li>
+            <li>生活美学·提升生活品质</li>
+          </ul>
+        </div>
+
+        <!-- 摄影记录 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-camera"></i></div>
+          <h3>摄影记录</h3>
+          <p class="card-desc">
+            用镜头捕捉生活中的美好瞬间，记录成长路上的点点滴滴和身边的美景。
+          </p >
+          <div class="card-tag">拍摄主题：</div>
+          <ul class="card-list">
+            <li>校园生活·青春记忆</li>
+            <li>美食记录·分享美味</li>
+            <li>风景摄影·发现美景</li>
+            <li>人像拍摄·记录友情</li>
+          </ul>
+        </div>
+
+        <!-- 绘画手工 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-palette"></i></div>
+          <h3>绘画手工</h3>
+          <p class="card-desc">
+            喜欢用画笔表达内心的想法，也喜欢制作各种小手工，享受创作的乐趣。
+          </p >
+          <div class="card-tag">创作类型：</div>
+          <ul class="card-list">
+            <li>水彩画·清新自然的色彩</li>
+            <li>手账制作·记录美好时光</li>
+            <li>手工饰品·独特的小装饰</li>
+            <li>插画设计·可爱的小图案</li>
+          </ul>
+        </div>
+
+        <!-- 音乐舞蹈 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-music"></i></div>
+          <h3>音乐舞蹈</h3>
+          <p class="card-desc">
+            音乐是生活的调味剂，喜欢听各种类型的音乐，偶尔也会学学简单的舞蹈。
+          </p >
+          <div class="card-tag">音乐偏好：</div>
+          <ul class="card-list">
+            <li>流行音乐·跟上时代节拍</li>
+            <li>轻音乐·放松心情</li>
+            <li>民谣·感受真性情</li>
+            <li>古典音乐·陶冶情操</li>
+          </ul>
+        </div>
+
+        <!-- 美食烹饪 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-utensils"></i></div>
+          <h3>美食烹饪</h3>
+          <p class="card-desc">
+            热爱美食，喜欢尝试制作各种好吃的，享受烹饪过程中的乐趣和成就感。
+          </p >
+          <div class="card-tag">拿手菜品：</div>
+          <ul class="card-list">
+            <li>甜品制作·治愈系小点心</li>
+            <li>家常菜·温暖的味道</li>
+            <li>创意料理·新奇的搭配</li>
+            <li>健康轻食·营养又美味</li>
+          </ul>
+        </div>
+
+        <!-- 旅行探索 -->
+        <div class="hobby-card">
+          <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>旅行探索</h3>
+          <p class="card-desc">
+            喜欢到不同的地方走走看看，体验不同的文化，收集旅途中的美好回忆。
+          </p >
+          <div class="card-tag">旅行足迹：</div>
+          <ul class="card-list">
+            <li>城市探索·发现城市魅力</li>
+            <li>自然风光·亲近大自然</li>
+            <li>文化体验·了解当地风情</li>
+            <li>美食之旅·品地方特色</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+      <p>© 2025 陈建材的个人网站 感谢您的访问</p >
+    </footer>
+</body>
+</html>
